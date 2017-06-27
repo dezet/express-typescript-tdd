@@ -24,6 +24,7 @@
     "@types/mocha": "^2.2.41",
     "@types/morgan": "^1.7.32",
     "@types/node": "^8.0.3",
+    "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "chai": "^4.0.2",
     "chai-as-promised": "^7.0.0",

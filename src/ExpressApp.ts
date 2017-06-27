@@ -2,6 +2,7 @@ import * as path from 'path';
 import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
+import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
 
 class ExpressApp {
     // ref to Express instance
@@ -28,10 +29,9 @@ class ExpressApp {
        * API endpoints */
       let router = express.Router();
       // placeholder route handler
-      router.get('/', (req, res, next) => {
-        res.json({
-          message: 'Hello World!'
-        });
+      router.get('/api/v1/promatches', async (req, res, next) => {
+        let response = await axios.get('https://api.opendota.com/api/proMatches');
+        res.send(response.data);
       });
       this.express.use('/', router);
     }
